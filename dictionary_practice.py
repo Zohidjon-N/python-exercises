@@ -76,3 +76,44 @@ for dish in order:
 for dish in no_order:
     print(f"Sorry, we have not {dish}")        
 
+#Nested dictionary:
+
+countries_info = {
+    "Uzbekistan": {
+        "capital": "Tashkent",
+        "region": "Central Asia",
+        "language": "Uzbek",
+        "fact": "Famous for historic Silk Road cities like Samarkand and Bukhara."
+    },
+    "Japan": {
+        "capital": "Tokyo",
+        "region": "East Asia",
+        "language": "Japanese",
+        "fact": "Known for a unique blend of ancient traditions and ultra-modern technology."
+    },
+    "Switzerland": {
+        "capital": "Bern",
+        "region": "Europe",
+        "language": "German, French, Italian, Romansh",
+        "fact": "Famous for the Alps, neutrality, and high-quality watches and chocolate."
+    },
+    "Brazil": {
+        "capital": "Brasília",
+        "region": "South America",
+        "language": "Portuguese",
+        "fact": "Home to the Amazon Rainforest and the iconic Rio de Janeiro."
+    }
+}
+
+country=input('Enter the country to know info: ').title()
+count=0
+for key in countries_info:
+    if country==key:
+        print(f"Capital of {key} is {countries_info[key]['capital']}."
+              f"and it's located in {countries_info[key]['region']}."
+              f"Most spoken language in {key} is {countries_info[key]['language']}. {countries_info[key]['fact']}")
+    else:
+        count+=1;   
+ 
+if count==len(countries_info): 
+ print(f"There is no info about {country}.")        
