@@ -22,6 +22,7 @@ while True:
 
     thought= randint(1,10)
     count2 = 1
+    low , high = 1, 10
     while  True:
         print(f"The number you've thought is {thought}: true(T), the number I've thought is bigger(+), smaller(-)")
         answer= input(">>> ")
@@ -34,9 +35,11 @@ while True:
                 print(f"It's tie! We've both found the number with {count} guess.")        
             break
         elif answer == '-':
-            thought=randint(1, thought-1)
+            high = thought
+            thought=randint(low, high-1)
         elif answer == '+':
-            thought = randint(thought+1, 10)
+            low = thought
+            thought = randint(low+1, high)
         else:
             print('Unsupported symble. Try again!')
             answer= input(">>> ") 
