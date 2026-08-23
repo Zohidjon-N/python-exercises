@@ -32,4 +32,3 @@ for word in words:
     latin_words.append("".join(make_word))
     make_word.clear()
 
-print(latin_words)
