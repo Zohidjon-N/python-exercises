@@ -28,9 +28,4 @@ bot.polling()
 
 
 
-matin = input("Matn kiriting/Матн киритинг:\n")
-
-if matin.isascii():
-    print(to_cyrillic(matin))
-else:
-    print(to_latin(matin))    
+    
