@@ -16,10 +16,12 @@ class Student:
     
     
     def remove_subject(self, name_subject):
-        if name_subject.name in self.subjects:
-            self.subjects.remove(name_subject.name)
-        else:
-            print('You didn\'t take this course')
+        for subject in self.subjects:
+            if subject.name == name_subject:
+                self.subjects.remove(subject)
+                return
+        
+        print('You didn\'t take this course')
 
 class Subject:
     def __init__(self,name):
