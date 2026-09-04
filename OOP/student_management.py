@@ -35,3 +35,6 @@ student1.take_subject(math)
 student1.remove_subject('bio')    
 
 print(student1.get_info())
+
+
+
