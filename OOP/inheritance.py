@@ -1,8 +1,20 @@
+from uuid import uuid4
 class Person:
+    __count = 0 #private class attribute
     def __init__(self, name,surname,y_birth):
         self.name = name
         self.surname = surname
         self.y_birth = y_birth
+        self.__id = uuid4() #private attribute
+        Person.__count +=1
+
+    @property
+    def get_id(self):
+        return self.__id
+
+    @classmethod
+    def get_count(cls):
+        return cls.__count
 
 
     def get_info(self):
@@ -39,4 +51,6 @@ class Admin(User): #Multi-level inheritance
 admin = Admin('adm','ADM',2000,'nomailcom')
 
 print(admin.ban_user('aziz'))
+
+print(f"ID:{user.get_id}\nCount: {Person.get_count()}")
         
