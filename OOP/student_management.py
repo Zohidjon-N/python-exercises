@@ -5,6 +5,14 @@ class Student:
         self.level = 1
         self.subjects = []
 
+    def __repr__(self):
+        return f"{self.name} {self.surname}" 
+
+    def __lt__(self, other):
+        return self.level < other.level
+    def __eq__(self, other):
+        return self.level == other.level
+
     def get_info(self):
         return f"Name: {self.name}\nSurname: {self.surname}\nLevel: {self.level}\nSubjects: {self.subjects}"  
 
@@ -26,6 +34,23 @@ class Student:
 class Subject:
     def __init__(self,name):
         self.name = name
+        self.students =[]
+
+    def add_student(self,student):
+        if isinstance(student, Student):
+            return self.students.append(student)
+    def __getitem__(self, index):
+        return self.students[index]
+
+    def __setitem__(self, index, student):
+        if isinstance(student, Student):
+            self.students[index] = student
+        
+    def __len__(self):
+        return len(self.students)
+     
+
+
 
 
 student1 = Student('Anvar','Karimov') 
@@ -35,6 +60,7 @@ student1.take_subject(math)
 student1.remove_subject('bio')    
 
 print(student1.get_info())
+print(student1==student1)
 
 
 

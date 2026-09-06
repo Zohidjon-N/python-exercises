@@ -7,6 +7,8 @@ class Person:
         self.y_birth = y_birth
         self.__id = uuid4() #private attribute
         Person.__count +=1
+    def __repr__(self):
+        return f"{self.name} {self.surname}"
 
     @property
     def get_id(self):
